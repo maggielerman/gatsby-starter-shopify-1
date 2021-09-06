@@ -113,16 +113,9 @@ function SearchPage({
   // If we're using the default filters, use the products from the Gatsby data layer.
   // Otherwise, use the data from search.
   const isDefault = !data
-  const productList = useMemo()((isDefault ? products.edges : data?.products?.edges) ?? []);
+  const productList = (isDefault ? products.edges : data?.products?.edges) ?? [];
 
-  //  const computeProductList = (word) => {
-  //   let i = 0;
-  //   while (i < 1000000000) i++;
-  //   return word.length;
-  // };
-  // Memoize computeProductList so it uses cached return value if input array ...
-  // ... values are the same as last time the function was run.
-  // const letterCount = useMemo(() => computeProductList(word), [word]);
+
 
   // Scroll up when navigating
   React.useEffect(() => {
