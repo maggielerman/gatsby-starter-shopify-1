@@ -8,3 +8,5 @@ public
 *.log
 yarn.lock
 gatsby-node.old.js
+# Local Netlify folder
+.netlify

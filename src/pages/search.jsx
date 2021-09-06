@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useMemo } from "react"
 import { graphql } from "gatsby"
 import slugify from "@sindresorhus/slugify"
 import debounce from "debounce"
@@ -45,7 +46,7 @@ export const query = graphql`
       tags: distinct(field: tags)
       vendors: distinct(field: vendor)
     }
-    products: allShopifyProduct(limit: 24, sort: { fields: title }) {
+    products: allShopifyProduct(sort: { fields: title }) {
       edges {
         node {
           title
@@ -112,7 +113,16 @@ function SearchPage({
   // If we're using the default filters, use the products from the Gatsby data layer.
   // Otherwise, use the data from search.
   const isDefault = !data
-  const productList = (isDefault ? products.edges : data?.products?.edges) ?? []
+  const productList = useMemo()((isDefault ? products.edges : data?.products?.edges) ?? []);
+
+  //  const computeProductList = (word) => {
+  //   let i = 0;
+  //   while (i < 1000000000) i++;
+  //   return word.length;
+  // };
+  // Memoize computeProductList so it uses cached return value if input array ...
+  // ... values are the same as last time the function was run.
+  // const letterCount = useMemo(() => computeProductList(word), [word]);
 
   // Scroll up when navigating
   React.useEffect(() => {

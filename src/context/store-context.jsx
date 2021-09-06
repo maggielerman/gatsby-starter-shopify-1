@@ -130,7 +130,7 @@ export const StoreProvider = ({ children }) => {
         didJustAddToCart,
       }}
     >
-      {children}
+      {children} 
     </StoreContext.Provider>
   )
 }

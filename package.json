@@ -22,7 +22,7 @@
   "dependencies": {
     "@sindresorhus/slugify": "^1.1.0",
     "debounce": "^1.2.1",
-    "gatsby": "^3.4.1",
+    "gatsby": "^3.13.0",
     "gatsby-plugin-gatsby-cloud": "^2.4.1",
     "gatsby-plugin-google-analytics": "^3.4.0",
     "gatsby-plugin-image": "^1.4.0",
@@ -36,6 +36,7 @@
     "joi": "^17.4.2",
     "lodash.debounce": "^4.0.8",
     "lodash.isequal": "^4.5.0",
+    "netlify-cli": "^6.8.6",
     "query-string": "^7.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

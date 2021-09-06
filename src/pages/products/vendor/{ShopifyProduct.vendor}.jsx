@@ -30,7 +30,6 @@ export const query = graphql`
     products: allShopifyProduct(
       filter: { vendor: { eq: $vendor } }
       sort: { fields: publishedAt, order: DESC }
-      limit: 24
     ) {
       nodes {
         ...ProductCard

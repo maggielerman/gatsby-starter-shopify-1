@@ -34,7 +34,7 @@ query ($query: String!, $sortKey: ProductSortKeys, $first: Int, $last: Int, $aft
           }
         }
         id
-        images(first: 1) {
+        images(first: 10) {
           edges {
             node {
               originalSrc

@@ -9,7 +9,7 @@ const urqlClient = createClient({
         process.env.GATSBY_STOREFRONT_ACCESS_TOKEN,
     },
   },
-})
+}) 
 
 export function SearchProvider({ children }) {
   return <UrlqProvider value={urqlClient}>{children}</UrlqProvider>
